@@ -15,30 +15,43 @@ def menu():
 menu()
 
 
-#Выбор smtp для отправки
-print('Choose smtp server (1-3)')
-print('\n1. smtp.gmail.com (didn`t work) \n2. smtp.yandex.ru \n3. smtp.mail.ru')
-a = int(input('Your choose: '))
+#smtp выбор
+def smtpchoose():
+	print('Choose smtp server (1-3)')
+	print('\n1. smtp.gmail.com (didn`t work) \n2. smtp.yandex.ru \n3. smtp.mail.ru')
+	a = int(input('Your choose: '))
 
+	match a:
+		case 1:
+			url = 'smtp.gmail.com'
+		case 2:
+			url = 'smtp.yandex.ru'
+		case 3:
+			url = 'smtp.mail.ru'
 
-#Проверка на долбаеба (говнокод)
-if (a == 1):
-	url = 'smtp.gmail.com'
-elif (a == 2):
-	url = 'smtp.yandex.ru'
-elif (a == 3):
-	url = 'smtp.mail.ru'
-elif (a > 1 or a > 3):
-	print('Invalid choose')
+	if (a > 3 or a < 1):
+		print('Invalid choose \n')
+
+	return url
+
+#получаем ссылку smtp сервера
+url = smtpchoose()
 
 
 
 #блок данных для входа и сообщения
-login = input('\nLogin: ')
-password = input('\nPassword: ')
-komu = input('\nTo: ')
-zagolovok = input('\nTopic: ')
-message = input('\nMessage: ')
+def user_data():
+	login = input('\nLogin: ')
+	password = input('\nPassword: ')
+	komu = input('\nTo: ')
+	zagolovok = input('\nTopic: ')
+	message = input('\nMessage: ')
+
+	return login, password, komu, zagolovok, message
+
+#получаем данные пользователя
+login, password, komu, zagolovok, message = user_data()
+
 
 
 #функция хуюнкция для отправки
@@ -50,6 +63,7 @@ def send_mail():
 	msg[ 'From' ] = login
 	body = message
 	msg.attach( MIMEText(body, 'plain'))
+
 
 	server = root.SMTP_SSL(url, 465)
 	server.login(login, password)
