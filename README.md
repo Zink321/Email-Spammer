@@ -4,6 +4,9 @@ Just a email spammer
 
 
 ##Installation:
-1. Install python for your OS
-2. pip3 install smtplib
-3. Run email_spammer.py
+1. Install Python on your OS!
+
+2. a) Run cmd
+   b) type "pip3 install art"
+
+3. Run email-spammer.py
