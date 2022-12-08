@@ -1,6 +1,7 @@
-# Email-Spammer
-Just a email spammer
-Просто спамит на почту
+# Email-Spammer (for Mail.ru only!!)
+
+Just a mail.ru spammer
+
 
 
 ##Installation:
