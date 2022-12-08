@@ -7,7 +7,6 @@ Just a mail.ru spammer
 ##Installation:
 1. Install Python on your OS!
 
-2. a) Run cmd
-   b) type "pip3 install art"
+2. run pip3 install art in your cmd
 
 3. Run email-spammer.py
